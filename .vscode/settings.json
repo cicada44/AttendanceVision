@@ -1,0 +1,12 @@
+{
+    "editor.formatOnSave": true,
+    "files.associations": {
+        ".fantomasignore": "ignore",
+        "qtwidgets": "cpp",
+        "qtwidgetsdepends": "cpp",
+        "type_traits": "cpp",
+        "cstddef": "cpp",
+        "qlabel": "cpp",
+        "qmouseevent": "cpp"
+    }
+}

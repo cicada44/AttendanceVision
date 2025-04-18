@@ -1,0 +1,5 @@
+C:/cicada-main/sibsutis/graduate/attendance/build/CMakeFiles/Attendance.dir
+C:/cicada-main/sibsutis/graduate/attendance/build/CMakeFiles/edit_cache.dir
+C:/cicada-main/sibsutis/graduate/attendance/build/CMakeFiles/rebuild_cache.dir
+C:/cicada-main/sibsutis/graduate/attendance/build/CMakeFiles/Attendance_autogen_timestamp_deps.dir
+C:/cicada-main/sibsutis/graduate/attendance/build/CMakeFiles/Attendance_autogen.dir

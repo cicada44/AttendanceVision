@@ -20,7 +20,6 @@ CameraPreviewLabel* createVideoLabel() {
 }  // namespace
 
 CamerasTab::CamerasTab(QWidget* parent) : QWidget(parent), timer(new QTimer(this)) {
-    auto stacked = new QStackedWidget(this);
     setupUI();
     startCameras();
 }
@@ -48,8 +47,11 @@ void CamerasTab::startCameras() {
         cv::VideoCapture cap(url);
         if (!cap.isOpened()) {
             videoFeedLabels.at(url)->setText("Failed to open camera!");
-            connect(videoFeedLabels.at(url), &CameraPreviewLabel::cameraClicked, this,
-                    [&](const QString& name) { stacked->setCurrentWidget(videoFeedLabels.at(url)); });
+            connect(videoFeedLabels.at(url), &CameraPreviewLabel::cameraClicked, this, [&](const std::string& name) {
+                auto d = new QDialog(this);
+                auto l = new QVBoxLayout(d);
+                d->setLayout(l);
+            });
             return;
         }
         timer->start(30);

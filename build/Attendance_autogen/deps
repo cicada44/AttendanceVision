@@ -1,22 +1,22 @@
 Attendance_autogen/timestamp: \
-	C:/cicada-main/sibsutis/graduate/attendance/CMakeLists.txt \
-	C:/cicada-main/sibsutis/graduate/attendance/build/Attendance_autogen/moc_predefs.h \
-	C:/cicada-main/sibsutis/graduate/attendance/build/CMakeFiles/3.29.2/CMakeCCompiler.cmake \
-	C:/cicada-main/sibsutis/graduate/attendance/build/CMakeFiles/3.29.2/CMakeCXXCompiler.cmake \
-	C:/cicada-main/sibsutis/graduate/attendance/build/CMakeFiles/3.29.2/CMakeRCCompiler.cmake \
-	C:/cicada-main/sibsutis/graduate/attendance/build/CMakeFiles/3.29.2/CMakeSystem.cmake \
-	C:/cicada-main/sibsutis/graduate/attendance/src/AttendanceTab/AttendanceTab.cpp \
-	C:/cicada-main/sibsutis/graduate/attendance/src/AttendanceTab/AttendanceTab.h \
-	C:/cicada-main/sibsutis/graduate/attendance/src/CamerasTab/CamerasTab.cpp \
-	C:/cicada-main/sibsutis/graduate/attendance/src/CamerasTab/CamerasTab.h \
-	C:/cicada-main/sibsutis/graduate/attendance/src/CustomWidgets/CameraLabel.cpp \
-	C:/cicada-main/sibsutis/graduate/attendance/src/CustomWidgets/CameraLabel.h \
-	C:/cicada-main/sibsutis/graduate/attendance/src/CustomWidgets/VTabWidget.cpp \
-	C:/cicada-main/sibsutis/graduate/attendance/src/CustomWidgets/VTabWidget.h \
-	C:/cicada-main/sibsutis/graduate/attendance/src/General/General.h \
-	C:/cicada-main/sibsutis/graduate/attendance/src/MainWindow/MainWindow.cpp \
-	C:/cicada-main/sibsutis/graduate/attendance/src/MainWindow/MainWindow.h \
-	C:/cicada-main/sibsutis/graduate/attendance/src/main.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/CMakeLists.txt \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/build/Attendance_autogen/moc_predefs.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/build/CMakeFiles/3.29.2/CMakeCCompiler.cmake \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/build/CMakeFiles/3.29.2/CMakeCXXCompiler.cmake \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/build/CMakeFiles/3.29.2/CMakeRCCompiler.cmake \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/build/CMakeFiles/3.29.2/CMakeSystem.cmake \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/AttendanceTab/AttendanceTab.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/AttendanceTab/AttendanceTab.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/CamerasTab/CamerasTab.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/CamerasTab/CamerasTab.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/CustomWidgets/CameraLabel.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/CustomWidgets/CameraLabel.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/CustomWidgets/VTabWidget.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/CustomWidgets/VTabWidget.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/General/General.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/MainWindow/MainWindow.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/MainWindow/MainWindow.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/main.cpp \
 	C:/msys64/mingw64/include/GL/gl.h \
 	C:/msys64/mingw64/include/_mingw.h \
 	C:/msys64/mingw64/include/_mingw_mac.h \
@@ -260,8 +260,8 @@ Attendance_autogen/timestamp: \
 	C:/msys64/mingw64/include/qt6/QtCore/QScopedPointer \
 	C:/msys64/mingw64/include/qt6/QtCore/QSize \
 	C:/msys64/mingw64/include/qt6/QtCore/QSizeF \
-	C:/msys64/mingw64/include/qt6/QtCore/QString \
-	C:/msys64/mingw64/include/qt6/QtCore/QStringList \
+	C:/msys64/mingw64/include/qt6/QtCore/std::string \
+	C:/msys64/mingw64/include/qt6/QtCore/std::stringList \
 	C:/msys64/mingw64/include/qt6/QtCore/QTimer \
 	C:/msys64/mingw64/include/qt6/QtCore/QVariant \
 	C:/msys64/mingw64/include/qt6/QtCore/QtCore \
@@ -455,18 +455,18 @@ Attendance_autogen/timestamp: \
 	C:/msys64/mingw64/include/qt6/QtCore/qstandardpaths.h \
 	C:/msys64/mingw64/include/qt6/QtCore/qstaticlatin1stringmatcher.h \
 	C:/msys64/mingw64/include/qt6/QtCore/qstorageinfo.h \
-	C:/msys64/mingw64/include/qt6/QtCore/qstring.h \
-	C:/msys64/mingw64/include/qt6/QtCore/qstringalgorithms.h \
-	C:/msys64/mingw64/include/qt6/QtCore/qstringbuilder.h \
-	C:/msys64/mingw64/include/qt6/QtCore/qstringconverter.h \
-	C:/msys64/mingw64/include/qt6/QtCore/qstringconverter_base.h \
-	C:/msys64/mingw64/include/qt6/QtCore/qstringfwd.h \
-	C:/msys64/mingw64/include/qt6/QtCore/qstringlist.h \
-	C:/msys64/mingw64/include/qt6/QtCore/qstringlistmodel.h \
-	C:/msys64/mingw64/include/qt6/QtCore/qstringliteral.h \
-	C:/msys64/mingw64/include/qt6/QtCore/qstringmatcher.h \
-	C:/msys64/mingw64/include/qt6/QtCore/qstringtokenizer.h \
-	C:/msys64/mingw64/include/qt6/QtCore/qstringview.h \
+	C:/msys64/mingw64/include/qt6/QtCore/std::string.h \
+	C:/msys64/mingw64/include/qt6/QtCore/std::stringalgorithms.h \
+	C:/msys64/mingw64/include/qt6/QtCore/std::stringbuilder.h \
+	C:/msys64/mingw64/include/qt6/QtCore/std::stringconverter.h \
+	C:/msys64/mingw64/include/qt6/QtCore/std::stringconverter_base.h \
+	C:/msys64/mingw64/include/qt6/QtCore/std::stringfwd.h \
+	C:/msys64/mingw64/include/qt6/QtCore/std::stringlist.h \
+	C:/msys64/mingw64/include/qt6/QtCore/std::stringlistmodel.h \
+	C:/msys64/mingw64/include/qt6/QtCore/std::stringliteral.h \
+	C:/msys64/mingw64/include/qt6/QtCore/std::stringmatcher.h \
+	C:/msys64/mingw64/include/qt6/QtCore/std::stringtokenizer.h \
+	C:/msys64/mingw64/include/qt6/QtCore/std::stringview.h \
 	C:/msys64/mingw64/include/qt6/QtCore/qswap.h \
 	C:/msys64/mingw64/include/qt6/QtCore/qsysinfo.h \
 	C:/msys64/mingw64/include/qt6/QtCore/qsystemdetection.h \
@@ -1033,34 +1033,115 @@ Attendance_autogen/timestamp: \
 	C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/xsaveoptintrin.h \
 	C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/xsavesintrin.h \
 	C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/xtestintrin.h \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeCCompiler.cmake.in \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeCCompilerABI.c \
 	C:/msys64/mingw64/share/cmake/Modules/CMakeCInformation.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeCXXCompiler.cmake.in \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeCXXCompilerABI.cpp \
 	C:/msys64/mingw64/share/cmake/Modules/CMakeCXXInformation.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeCompilerIdDetection.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeDetermineCCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeDetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeDetermineCompilerABI.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeDetermineCompilerId.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeDetermineRCCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeDetermineSystem.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeFindBinUtils.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/CMakeFindDependencyMacro.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/CMakeGenericSystem.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/CMakeInitializeConfigs.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/CMakeLanguageInformation.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeNinjaFindMake.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeRCCompiler.cmake.in \
 	C:/msys64/mingw64/share/cmake/Modules/CMakeRCInformation.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeSystem.cmake.in \
 	C:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeTestCCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeTestCXXCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeTestCompilerCommon.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/CMakeTestRCCompiler.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/CheckCSourceCompiles.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/CheckCXXCompilerFlag.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/CheckCXXSourceCompiles.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/CheckIncludeFile.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/CheckLibraryExists.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/Compiler/GNU-C.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/Compiler/GNU-CXX.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/Compiler/GNU.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/TIClang-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/FindPackageMessage.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/FindThreads.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/FindVulkan.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/GNUInstallDirs.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/Internal/CheckCompilerFlag.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Internal/FeatureTesting.cmake \
+	C:/msys64/mingw64/share/cmake/Modules/Platform/Windows-Determine-CXX.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-C.cmake \
 	C:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake \

@@ -1,14 +1,17 @@
 #pragma once
 
-#include <QTabWidget>
 #include <QWidget>
+#include "../Controller/CameraController.h"
+#include "../Model/CameraManager.h"
+#include "../View/CamerasTab.h"
 
 class MainWindow : public QWidget {
     Q_OBJECT
-
 public:
     explicit MainWindow(QWidget* parent = nullptr);
 
 private:
-    QTabWidget* sidePanel;  // Боковая панель с вкладками
+    CameraManager* cameraManager;
+    CameraController* cameraController;
+    CamerasTab* camerasTab;
 };

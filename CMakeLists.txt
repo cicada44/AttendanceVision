@@ -1,44 +1,71 @@
 cmake_minimum_required(VERSION 3.17)
 
-project(Attendance)
+project(AttendanceVision)
 
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
 
-set(project_name Attendance)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# Qt6
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
+# OpenCV
+find_package(OpenCV REQUIRED)
 
 set(SrcDir src)
-set(MainWindowDir src/MainWindow)
-set(CamerasTabDir src/CamerasTab)
-set(AttendanceTabDir src/AttendanceTab)
-set(CustomWidgetsDir src/CustomWidgets)
 
-add_executable(
-    ${project_name}
-        ${SrcDir}/main.cpp
-        ${MainWindowDir}/MainWindow.cpp
-        ${MainWindowDir}/MainWindow.h
-        ${CamerasTabDir}/CamerasTab.cpp
-        ${CamerasTabDir}/CamerasTab.h
-        ${AttendanceTabDir}/AttendanceTab.cpp
-        ${AttendanceTabDir}/AttendanceTab.h
-        ${CustomWidgetsDir}/VTabWidget.cpp
-        ${CustomWidgetsDir}/VTabWidget.h
-        ${CustomWidgetsDir}/CameraLabel.cpp
-        ${CustomWidgetsDir}/CameraLabel.h
-        ${SrcDir}/General/General.h
-        resources.qrc
+add_executable(${PROJECT_NAME}
+    ${SrcDir}/main.cpp
+
+    # MainWindow
+    ${SrcDir}/MainWindow/MainWindow.cpp
+    ${SrcDir}/MainWindow/MainWindow.h
+
+    # View
+    ${SrcDir}/View/CamerasTab.cpp
+    ${SrcDir}/View/CamerasTab.h
+    ${SrcDir}/View/CameraDialog.cpp
+    ${SrcDir}/View/CameraDialog.h
+
+    # Controller
+    ${SrcDir}/Controller/CameraController.cpp
+    ${SrcDir}/Controller/CameraController.h
+
+    # Model
+    ${SrcDir}/Model/CameraManager.cpp
+    ${SrcDir}/Model/CameraManager.h
+
+    # Custom Widgets
+    ${SrcDir}/CustomWidgets/CameraLabel.cpp
+    ${SrcDir}/CustomWidgets/CameraLabel.h
+    ${SrcDir}/CustomWidgets/VTabWidget.cpp
+    ${SrcDir}/CustomWidgets/VTabWidget.h
+
+    # General
+    ${SrcDir}/General/General.h
+
+    # Resources (если есть .qrc файл ресурсов)
+    resources.qrc
 )
 
-# qt_add_qml_module(Attendance "resources" resources.qrc)
+# Подключаем библиотеки
+target_link_libraries(${PROJECT_NAME}
+    PRIVATE
+    Qt6::Widgets
+    ${OpenCV_LIBS}
+)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
-
-find_package(OpenCV REQUIRED)
-target_link_libraries(${project_name} PRIVATE ${OpenCV_LIBS})
-
-target_link_libraries(${project_name} PRIVATE Qt6::Widgets)
-
-target_include_directories(
-    ${project_name} PUBLIC
-    MainWindow
+# Указываем пути для #include
+target_include_directories(${PROJECT_NAME}
+    PUBLIC
+    ${SrcDir}
+    ${SrcDir}/MainWindow
+    ${SrcDir}/View
+    ${SrcDir}/Controller
+    ${SrcDir}/Model
+    ${SrcDir}/CustomWidgets
+    ${SrcDir}/General
 )

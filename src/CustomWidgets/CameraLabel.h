@@ -8,12 +8,12 @@ class CameraPreviewLabel : public QLabel {
     Q_OBJECT
 
 public:
-    explicit CameraPreviewLabel(const QString& name, QWidget* parent = nullptr);
+    explicit CameraPreviewLabel(const std::string& name, QWidget* parent = nullptr);
 
     ~CameraPreviewLabel() {};
 
 signals:
-    void cameraClicked(const QString& name);
+    void cameraClicked(const std::string& name);
 
 protected:
     void enterEvent(QEnterEvent*) override;
@@ -25,6 +25,6 @@ protected:
     void paintEvent(QPaintEvent* event) override;
 
 private:
-    QString cameraName;
+    std::string cameraName;
     bool hovered;
 };

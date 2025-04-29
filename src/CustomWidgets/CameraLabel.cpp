@@ -1,8 +1,8 @@
 #include "CameraLabel.h"
 
-#include <QString>
+#include <string>
 
-CameraPreviewLabel::CameraPreviewLabel(const QString& name, QWidget* parent)
+CameraPreviewLabel::CameraPreviewLabel(const std::string& name, QWidget* parent)
     : QLabel(parent), cameraName(name), hovered(false) {
     setMouseTracking(true);
 }
@@ -39,6 +39,6 @@ void CameraPreviewLabel::paintEvent(QPaintEvent* event) {
         font.setPointSize(12);
         painter.setFont(font);
         painter.setPen(Qt::white);
-        painter.drawText(rect(), Qt::AlignCenter, cameraName);
+        painter.drawText(rect(), Qt::AlignCenter, QString::fromStdString(cameraName));
     }
 }

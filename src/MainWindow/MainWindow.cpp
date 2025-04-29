@@ -1,23 +1,20 @@
-#include <QHBoxLayout>
-
-#include "../AttendanceTab/AttendanceTab.h"
-#include "../CamerasTab/CamerasTab.h"
-#include "../CustomWidgets/VTabWidget.h"
 #include "MainWindow.h"
+#include <QVBoxLayout>
+#include "General/General.h"
 
 MainWindow::MainWindow(QWidget* parent) : QWidget(parent) {
-    sidePanel = new VTabWidget();
+    cameraManager = new CameraManager();
+    cameraController = new CameraController(this);
+    cameraController->setModel(cameraManager);
 
-    sidePanel->setTabPosition(QTabWidget::West);
+    // Предзаполняем камеры из General.h
+    for (const auto& url : CamerasUrls) {
+        cameraManager->addCamera(url);
+    }
 
-    auto camerasTab = new CamerasTab(this);
-    auto attendanceTab = new AttendanceTab(this);
+    camerasTab = new CamerasTab(cameraController, this);
 
-    sidePanel->addTab(camerasTab, "Cameras");
-    sidePanel->addTab(attendanceTab, "Attendance");
-
-    auto mainLayout = new QHBoxLayout(this);
-    mainLayout->addWidget(sidePanel);
-
-    setLayout(mainLayout);
+    auto layout = new QVBoxLayout(this);
+    layout->addWidget(camerasTab);
+    setLayout(layout);
 }

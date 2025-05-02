@@ -11,14 +11,10 @@ CameraManager::~CameraManager() {
     }
 }
 
-void CameraManager::addCamera(const std::string& url) {
-    if (cameraUrls.find(url) != cameraUrls.end()) {
-        cameraUrls.insert(url);
-    }
-}
+void CameraManager::addCamera(const std::string& url) { cameraUrls.insert(url); }
 
 void CameraManager::removeCamera(const std::string& url) {
-    cameraUrls.erase(std::remove(cameraUrls.begin(), cameraUrls.end(), url), cameraUrls.end());
+    cameraUrls.erase(url);
     if (streams.find(url) != streams.end()) {
         streams[url]->release();
         delete streams[url];
@@ -29,7 +25,7 @@ void CameraManager::removeCamera(const std::string& url) {
 const std::unordered_set<std::string>& CameraManager::getCameraUrls() const { return cameraUrls; }
 
 bool CameraManager::openStream(const std::string& url) {
-    if (streams.find(url) != streams.end()) {
+    if (streams.find(url) == streams.end()) {
         auto* cap = new cv::VideoCapture(url);
         if (!cap->isOpened()) {
             delete cap;

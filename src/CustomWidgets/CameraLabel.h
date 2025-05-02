@@ -13,7 +13,7 @@ public:
     ~CameraPreviewLabel() {};
 
 signals:
-    void cameraClicked(const std::string& name);
+    void cameraClicked(std::string& name);
 
 protected:
     void enterEvent(QEnterEvent*) override;

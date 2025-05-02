@@ -13,6 +13,7 @@ public:
 private:
     void setupUI();
     void fillCamerasLayout(QGridLayout* layout);
+    void addNewCamera();
 
     CameraController* controller;
     std::unordered_map<std::string, CameraPreviewLabel*> videoFeedLabels;

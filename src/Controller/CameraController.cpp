@@ -5,12 +5,13 @@ CameraController::CameraController(QObject* parent) : QObject(parent), model(nul
 
 void CameraController::setModel(CameraManager* m) { model = m; }
 
-void CameraController::handleCameraClicked(std::string& url) {
+void CameraController::handleCameraClicked(const std::string& url) {
     if (!model || !model->openStream(url)) {
         qWarning() << "Failed to open stream for" << url;
         return;
     }
 
-    CameraDialog dialog(url, model->getCapture(url));
+    auto cap = model->getCapture(url);
+    CameraDialog dialog(url, cap);
     dialog.exec();
 }

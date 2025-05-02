@@ -23,15 +23,6 @@ AttendanceVision_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 AttendanceVision_SOURCE_DIR:STATIC=C:/cicada-main/sibsutis/graduate/AttendanceVision
 
-//Value Computed by CMake
-Attendance_BINARY_DIR:STATIC=C:/cicada-main/sibsutis/graduate/AttendanceVision/build
-
-//Value Computed by CMake
-Attendance_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-Attendance_SOURCE_DIR:STATIC=C:/cicada-main/sibsutis/graduate/AttendanceVision
-
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/msys64/mingw64/bin/addr2line.exe
 
@@ -164,7 +155,7 @@ CMAKE_INSTALL_MANDIR:PATH=
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/Attendance
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/AttendanceVision
 
 //Run-time variable data (LOCALSTATEDIR/run)
 CMAKE_INSTALL_RUNSTATEDIR:PATH=
@@ -1292,5 +1283,5 @@ Vulkan_LIBRARY-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/Attendance
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/AttendanceVision
 

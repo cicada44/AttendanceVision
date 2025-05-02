@@ -39,7 +39,7 @@ constexpr auto qt_meta_stringdata_CLASSCameraPreviewLabelENDCLASS = QtMocHelpers
     "CameraPreviewLabel",
     "cameraClicked",
     "",
-    "std::string",
+    "std::string&",
     "name"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
@@ -80,7 +80,7 @@ Q_CONSTINIT const QMetaObject CameraPreviewLabel::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<CameraPreviewLabel, std::true_type>,
         // method 'cameraClicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const std::string &, std::false_type>
+        QtPrivate::TypeAndForceComplete<std::string &, std::false_type>
     >,
     nullptr
 } };
@@ -91,13 +91,13 @@ void CameraPreviewLabel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         auto *_t = static_cast<CameraPreviewLabel *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->cameraClicked((*reinterpret_cast< std::add_pointer_t<std::string>>(_a[1]))); break;
+        case 0: _t->cameraClicked((*reinterpret_cast< std::add_pointer_t<std::string&>>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (CameraPreviewLabel::*)(const std::string & );
+            using _t = void (CameraPreviewLabel::*)(std::string & );
             if (_t _q_method = &CameraPreviewLabel::cameraClicked; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
@@ -137,7 +137,7 @@ int CameraPreviewLabel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void CameraPreviewLabel::cameraClicked(const std::string & _t1)
+void CameraPreviewLabel::cameraClicked(std::string & _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

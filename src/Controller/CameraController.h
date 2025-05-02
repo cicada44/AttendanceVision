@@ -9,7 +9,7 @@ public:
     explicit CameraController(QObject* parent = nullptr);
 
     void setModel(CameraManager* model);
-    void handleCameraClicked(std::string& url);
+    void handleCameraClicked(const std::string& url);
 
 private:
     CameraManager* model;

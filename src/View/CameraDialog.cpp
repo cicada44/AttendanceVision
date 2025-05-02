@@ -4,6 +4,8 @@
 #include <QVBoxLayout>
 
 CameraDialog::CameraDialog(std::string url, cv::VideoCapture* cap, QWidget* parent) : QDialog(parent), capture(cap) {
+    if (!cap) qWarning() << "Cap is nullptr!\n";
+
     setWindowTitle(QString::fromStdString(url));
     resize(800, 600);
 
@@ -18,7 +20,7 @@ CameraDialog::CameraDialog(std::string url, cv::VideoCapture* cap, QWidget* pare
     layout->addWidget(filterButton);
 
     timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, [=]() {
+    connect(timer, &QTimer::timeout, this, [=, this]() {
         if (capture && capture->isOpened()) {
             cv::Mat frame;
             (*capture) >> frame;

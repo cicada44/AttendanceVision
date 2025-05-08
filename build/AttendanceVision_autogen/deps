@@ -8,6 +8,12 @@ AttendanceVision_autogen/timestamp: \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/resources.qrc \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Controller/CameraController.cpp \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Controller/CameraController.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Controller/DaemonController.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Controller/DaemonController.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Controller/ScheduleController.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Controller/ScheduleController.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Controller/StatisticsController.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Controller/StatisticsController.h \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/CustomWidgets/CameraLabel.cpp \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/CustomWidgets/CameraLabel.h \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/CustomWidgets/VTabWidget.cpp \
@@ -15,12 +21,26 @@ AttendanceVision_autogen/timestamp: \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/General/General.h \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/MainWindow/MainWindow.cpp \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/MainWindow/MainWindow.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/AttendanceAnalyzer.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/AttendanceAnalyzer.h \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/CameraManager.cpp \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/CameraManager.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/ScheduleModel.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/ScheduleModel.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/StatisticsModel.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/StatisticsModel.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/StatsRepository.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/StatsRepository.h \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/CameraDialog.cpp \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/CameraDialog.h \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/CamerasTab.cpp \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/CamerasTab.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/DaemonTab.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/DaemonTab.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/ScheduleTab.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/ScheduleTab.h \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/StatisticsTab.cpp \
+	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/StatisticsTab.h \
 	C:/cicada-main/sibsutis/graduate/AttendanceVision/src/main.cpp \
 	C:/msys64/mingw64/include/GL/gl.h \
 	C:/msys64/mingw64/include/_mingw.h \
@@ -391,6 +411,7 @@ AttendanceVision_autogen/timestamp: \
 	C:/msys64/mingw64/include/pthread_signal.h \
 	C:/msys64/mingw64/include/pthread_time.h \
 	C:/msys64/mingw64/include/pthread_unistd.h \
+	C:/msys64/mingw64/include/qt6/QtCore/QDateTime \
 	C:/msys64/mingw64/include/qt6/QtCore/QDeadlineTimer \
 	C:/msys64/mingw64/include/qt6/QtCore/QEvent \
 	C:/msys64/mingw64/include/qt6/QtCore/QHash \
@@ -400,7 +421,9 @@ AttendanceVision_autogen/timestamp: \
 	C:/msys64/mingw64/include/qt6/QtCore/QMetaType \
 	C:/msys64/mingw64/include/qt6/QtCore/QMutex \
 	C:/msys64/mingw64/include/qt6/QtCore/QObject \
+	C:/msys64/mingw64/include/qt6/QtCore/QPair \
 	C:/msys64/mingw64/include/qt6/QtCore/QPointF \
+	C:/msys64/mingw64/include/qt6/QtCore/QProcess \
 	C:/msys64/mingw64/include/qt6/QtCore/QRect \
 	C:/msys64/mingw64/include/qt6/QtCore/QScopedPointer \
 	C:/msys64/mingw64/include/qt6/QtCore/QSize \
@@ -409,6 +432,7 @@ AttendanceVision_autogen/timestamp: \
 	C:/msys64/mingw64/include/qt6/QtCore/QStringList \
 	C:/msys64/mingw64/include/qt6/QtCore/QTimer \
 	C:/msys64/mingw64/include/qt6/QtCore/QVariant \
+	C:/msys64/mingw64/include/qt6/QtCore/QVector \
 	C:/msys64/mingw64/include/qt6/QtCore/QtCore \
 	C:/msys64/mingw64/include/qt6/QtCore/QtCoreDepends \
 	C:/msys64/mingw64/include/qt6/QtCore/q20algorithm.h \
@@ -798,6 +822,12 @@ AttendanceVision_autogen/timestamp: \
 	C:/msys64/mingw64/include/qt6/QtGui/qwindowdefs.h \
 	C:/msys64/mingw64/include/qt6/QtGui/qwindowdefs_win.h \
 	C:/msys64/mingw64/include/qt6/QtGui/qwindowsmimeconverter.h \
+	C:/msys64/mingw64/include/qt6/QtSql/QSqlQuery \
+	C:/msys64/mingw64/include/qt6/QtSql/qsqldatabase.h \
+	C:/msys64/mingw64/include/qt6/QtSql/qsqlquery.h \
+	C:/msys64/mingw64/include/qt6/QtSql/qtsql-config.h \
+	C:/msys64/mingw64/include/qt6/QtSql/qtsqlexports.h \
+	C:/msys64/mingw64/include/qt6/QtSql/qtsqlglobal.h \
 	C:/msys64/mingw64/include/qt6/QtWidgets/QCommonStyle \
 	C:/msys64/mingw64/include/qt6/QtWidgets/QDialog \
 	C:/msys64/mingw64/include/qt6/QtWidgets/QLabel \
@@ -1058,6 +1088,35 @@ AttendanceVision_autogen/timestamp: \
 	C:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake \
 	C:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake \
 	C:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginAdditionalTargetInfo.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfig.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets-relwithdebinfo.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginAdditionalTargetInfo.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets-relwithdebinfo.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake \
+	C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlVersionlessTargets.cmake \
 	C:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake \
 	C:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginConfig.cmake \
 	C:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake \

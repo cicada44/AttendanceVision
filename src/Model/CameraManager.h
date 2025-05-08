@@ -6,14 +6,20 @@
 #include <unordered_set>
 #include <vector>
 
+#include <QSqlQuery>
+#include <QString>
+
 class CameraManager {
 public:
     CameraManager();
     ~CameraManager();
 
-    void addCamera(const std::string& url);
-    void removeCamera(const std::string& url);
+    bool addCamera(const QString& url, const QString& room);
+    bool removeCamera(const QString& url);
+
     const std::unordered_set<std::string>& getCameraUrls() const;
+
+    QMap<QString, QString> getCameras() const;
 
     bool openStream(const std::string& url);
     cv::VideoCapture* getCapture(const std::string& url);

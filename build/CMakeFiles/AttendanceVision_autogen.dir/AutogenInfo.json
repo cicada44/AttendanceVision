@@ -360,6 +360,41 @@
 		"C:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets.cmake",
 		"C:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake",
 		"C:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake",
+		"C:/msys64/mingw64/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlVersionlessTargets.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfig.cmake",
+		"C:/msys64/mingw64/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets-relwithdebinfo.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginAdditionalTargetInfo.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake",
+		"C:/msys64/mingw64/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets-relwithdebinfo.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginAdditionalTargetInfo.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake",
+		"C:/msys64/mingw64/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake",
+		"C:/msys64/mingw64/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake",
+		"C:/msys64/mingw64/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake",
 		"C:/msys64/mingw64/lib/cmake/opencv4/OpenCVConfig-version.cmake",
 		"C:/msys64/mingw64/lib/cmake/opencv4/OpenCVConfig.cmake",
 		"C:/msys64/mingw64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake",
@@ -378,6 +413,24 @@
 			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Controller/CameraController.h",
 			"MU",
 			"IFQ4TM45GG/moc_CameraController.cpp",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Controller/DaemonController.h",
+			"MU",
+			"IFQ4TM45GG/moc_DaemonController.cpp",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Controller/ScheduleController.h",
+			"MU",
+			"IFQ4TM45GG/moc_ScheduleController.cpp",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Controller/StatisticsController.h",
+			"MU",
+			"IFQ4TM45GG/moc_StatisticsController.cpp",
 			null
 		],
 		[
@@ -405,9 +458,33 @@
 			null
 		],
 		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/AttendanceAnalyzer.h",
+			"MU",
+			"TJWESXFFYF/moc_AttendanceAnalyzer.cpp",
+			null
+		],
+		[
 			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/CameraManager.h",
 			"MU",
 			"TJWESXFFYF/moc_CameraManager.cpp",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/ScheduleModel.h",
+			"MU",
+			"TJWESXFFYF/moc_ScheduleModel.cpp",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/StatisticsModel.h",
+			"MU",
+			"TJWESXFFYF/moc_StatisticsModel.cpp",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/StatsRepository.h",
+			"MU",
+			"TJWESXFFYF/moc_StatsRepository.cpp",
 			null
 		],
 		[
@@ -421,6 +498,24 @@
 			"MU",
 			"GT66W5ZSTU/moc_CamerasTab.cpp",
 			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/DaemonTab.h",
+			"MU",
+			"GT66W5ZSTU/moc_DaemonTab.cpp",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/ScheduleTab.h",
+			"MU",
+			"GT66W5ZSTU/moc_ScheduleTab.cpp",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/StatisticsTab.h",
+			"MU",
+			"GT66W5ZSTU/moc_StatisticsTab.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -432,6 +527,7 @@
 		"QT_CORE_LIB",
 		"QT_GUI_LIB",
 		"QT_NO_DEBUG",
+		"QT_SQL_LIB",
 		"QT_WIDGETS_LIB",
 		"UNICODE",
 		"WIN32",
@@ -463,6 +559,7 @@
 		"C:/msys64/mingw64/include/qt6/QtCore",
 		"C:/msys64/mingw64/share/qt6/mkspecs/win32-g++",
 		"C:/msys64/mingw64/include/qt6/QtGui",
+		"C:/msys64/mingw64/include/qt6/QtSql",
 		"C:/msys64/mingw64/include/opencv4",
 		"C:/msys64/mingw64/include",
 		"C:/msys64/mingw64/include/c++/13.2.0",
@@ -510,6 +607,21 @@
 			null
 		],
 		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Controller/DaemonController.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Controller/ScheduleController.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Controller/StatisticsController.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/CustomWidgets/CameraLabel.cpp",
 			"MU",
 			null
@@ -525,7 +637,27 @@
 			null
 		],
 		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/AttendanceAnalyzer.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/CameraManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/ScheduleModel.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/StatisticsModel.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/Model/StatsRepository.cpp",
 			"MU",
 			null
 		],
@@ -536,6 +668,21 @@
 		],
 		[
 			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/CamerasTab.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/DaemonTab.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/ScheduleTab.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/cicada-main/sibsutis/graduate/AttendanceVision/src/View/StatisticsTab.cpp",
 			"MU",
 			null
 		],

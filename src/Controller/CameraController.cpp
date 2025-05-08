@@ -7,11 +7,21 @@ void CameraController::setModel(CameraManager* m) { model = m; }
 
 void CameraController::handleCameraClicked(const std::string& url) {
     if (!model || !model->openStream(url)) {
-        qWarning() << "Failed to open stream for" << url;
+        qWarning() << "Failed to open stream for" << QString::fromStdString(url);
         return;
     }
 
     auto cap = model->getCapture(url);
     CameraDialog dialog(url, cap);
     dialog.exec();
+}
+
+bool CameraController::addCamera(const QString& url, const QString& room) {
+    return model && model->addCamera(url, room);
+}
+
+bool CameraController::removeCamera(const QString& url) { return model && model->removeCamera(url); }
+
+QMap<QString, QString> CameraController::getCameras() const {
+    return model ? model->getCameras() : QMap<QString, QString>();
 }

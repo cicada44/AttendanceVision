@@ -1,5 +1,4 @@
 #include "CamerasTab.h"
-#include <QGridLayout>
 #include "../General/General.h"
 
 CamerasTab::CamerasTab(CameraController* controller, QWidget* parent) : QWidget(parent), controller(controller) {
@@ -7,24 +6,39 @@ CamerasTab::CamerasTab(CameraController* controller, QWidget* parent) : QWidget(
 }
 
 void CamerasTab::setupUI() {
-    auto layout = new QGridLayout(this);
-    fillCamerasLayout(layout);
-    setLayout(layout);
+    gridLayout = new QGridLayout(this);
+    setLayout(gridLayout);
+    fillCamerasLayout(gridLayout);
 }
 
 void CamerasTab::fillCamerasLayout(QGridLayout* layout) {
-    int row = 0, col = 0;
-    for (const auto& url : CameraRoomMap) {
-        QString cameraUrl = url.first;
-        QString roomNumber = url.second;
+    layout->setSpacing(8);
+    layout->setAlignment(Qt::AlignTop);
 
-        auto* btn = new QPushButton(roomNumber, this);
+    int row = 0, col = 0;
+    auto cameras = controller->getCameras();  // Получаем карту <url, room>
+
+    for (const auto& [url, room] : cameras.toStdMap()) {
+        auto* btn = new QPushButton(room, this);
         btn->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         btn->setFont(QFont("", 24, QFont::Bold));
         layout->addWidget(btn, row, col);
 
-        connect(btn, &QPushButton::clicked, this,
-                [=, this]() { controller->handleCameraClicked(url.first.toStdString()); });
+        connect(btn, &QPushButton::clicked, this, [=]() { controller->handleCameraClicked(url.toStdString()); });
+
+        btn->setContextMenuPolicy(Qt::CustomContextMenu);
+        connect(btn, &QPushButton::customContextMenuRequested, this, [=](const QPoint&) {
+            QMenu menu;
+            menu.addAction("Удалить", [=]() {
+                if (controller->removeCamera(url)) {
+                    QMessageBox::information(this, "Удалено", "Камера удалена.");
+                    refresh();
+                } else {
+                    QMessageBox::warning(this, "Ошибка", "Не удалось удалить камеру.");
+                }
+            });
+            menu.exec(QCursor::pos());
+        });
 
         if (++col >= 2) {
             col = 0;
@@ -32,60 +46,60 @@ void CamerasTab::fillCamerasLayout(QGridLayout* layout) {
         }
     }
 
-    auto newCameraBtn = new QPushButton("+", this);
+    auto* newCameraBtn = new QPushButton("+", this);
     newCameraBtn->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     newCameraBtn->setFont(QFont("", 24, QFont::Bold));
-    connect(newCameraBtn, &QPushButton::clicked, this, [=, this]() { addNewCamera(); });
     layout->addWidget(newCameraBtn, row, col);
+
+    connect(newCameraBtn, &QPushButton::clicked, this, [=]() { addNewCamera(); });
+}
+
+void CamerasTab::refresh() {
+    QLayoutItem* item;
+    while ((item = gridLayout->takeAt(0)) != nullptr) {
+        delete item->widget();
+        delete item;
+    }
+    fillCamerasLayout(gridLayout);
 }
 
 void CamerasTab::addNewCamera() {
-    auto addNewCamDialog = new QDialog(this);
+    QDialog dialog(this);
+    dialog.setWindowTitle("Добавить новую камеру");
+    dialog.setFixedSize(400, 250);
 
-    auto l = new QVBoxLayout(addNewCamDialog);
+    auto* layout = new QVBoxLayout(&dialog);
+    auto* nameEdit = new QLineEdit();
+    auto* urlEdit = new QLineEdit();
+    nameEdit->setPlaceholderText("Аудитория (например, 401)");
+    urlEdit->setPlaceholderText("URL (например, http://admin:password@192.168.1.100/video)");
 
-    auto editName = new QLineEdit();
-    addNewCamDialog->accept();
-    editName->setPlaceholderText("New camera name");
+    auto* nameLabel = new QLabel("Название аудитории:");
+    auto* urlLabel = new QLabel("Ссылка на камеру:");
 
-    auto editUrl = new QLineEdit();
-    editUrl->setPlaceholderText("New url (http://admin:0gfhjkm)...");
+    layout->addWidget(nameLabel);
+    layout->addWidget(nameEdit);
+    layout->addWidget(urlLabel);
+    layout->addWidget(urlEdit);
 
-    auto nameLabel = new QLabel("Name"), urlLabel = new QLabel("URL");
-    QFont f = font();
-    f.setPixelSize(14);
-    nameLabel->setFont(f);
-    urlLabel->setFont(f);
+    auto* buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    layout->addWidget(buttonBox);
 
-    auto apply = new QPushButton("Apply");
-    connect(apply, &QPushButton::clicked, [=, this]() {
-        if (CameraRoomMap.contains(editUrl->text()) || editUrl->text().isEmpty() || editName->text().isEmpty()) {
-            QMessageBox::information(this, "Information", "Camera already added");
+    connect(buttonBox, &QDialogButtonBox::accepted, [&]() {
+        QString url = urlEdit->text().trimmed();
+        QString room = nameEdit->text().trimmed();
+        if (url.isEmpty() || room.isEmpty()) {
+            QMessageBox::warning(this, "Ошибка", "Поля не должны быть пустыми");
+            return;
+        }
+        if (controller->addCamera(url, room)) {
+            dialog.accept();
+            refresh();
         } else {
-            CameraRoomMap[editUrl->text()] = editName->text();
-            addNewCamDialog->accept();
+            QMessageBox::warning(this, "Ошибка", "Камера с таким URL уже существует или добавление не удалось.");
         }
     });
+    connect(buttonBox, &QDialogButtonBox::rejected, [&]() { dialog.reject(); });
 
-    auto cancel = new QPushButton("Cancel");
-    connect(cancel, &QPushButton::clicked, [=, this]() { addNewCamDialog->reject(); });
-
-    l->setSpacing(0);
-    l->addWidget(nameLabel);
-    l->addWidget(editName);
-    l->addSpacing(4);
-    l->addWidget(urlLabel);
-    l->addWidget(editUrl);
-    l->addSpacing(4);
-
-    auto buttonLayout = new QHBoxLayout();
-    buttonLayout->addWidget(cancel);
-    buttonLayout->addWidget(apply);
-
-    l->addSpacing(5);
-    l->addLayout(buttonLayout);
-
-    addNewCamDialog->setLayout(l);
-    addNewCamDialog->exec();
-    addNewCamDialog->setFixedSize(400, 300);
+    dialog.exec();
 }

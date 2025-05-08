@@ -3,7 +3,6 @@
 #include <QtWidgets/QtWidgets>
 #include <unordered_map>
 #include "../Controller/CameraController.h"
-#include "../CustomWidgets/CameraLabel.h"
 
 class CamerasTab : public QWidget {
     Q_OBJECT
@@ -14,7 +13,8 @@ private:
     void setupUI();
     void fillCamerasLayout(QGridLayout* layout);
     void addNewCamera();
+    void refresh();
 
     CameraController* controller;
-    std::unordered_map<std::string, CameraPreviewLabel*> videoFeedLabels;
+    QGridLayout* gridLayout = nullptr;
 };

@@ -11,7 +11,7 @@ public:
     void setModel(CameraManager* model);
     void handleCameraClicked(const std::string& url);
 
-    bool addCamera(const QString& url, const QString& room);
+    bool addCamera(const QString& url, const QString& room, double ratio = 0.25);
     bool removeCamera(const QString& url);
 
     QMap<QString, QString> getCameras() const;

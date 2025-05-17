@@ -16,8 +16,8 @@ void CameraController::handleCameraClicked(const std::string& url) {
     dialog.exec();
 }
 
-bool CameraController::addCamera(const QString& url, const QString& room) {
-    return model && model->addCamera(url, room);
+bool CameraController::addCamera(const QString& url, const QString& room, double ratio) {
+    return model && model->addCamera(url, room, ratio);
 }
 
 bool CameraController::removeCamera(const QString& url) { return model && model->removeCamera(url); }

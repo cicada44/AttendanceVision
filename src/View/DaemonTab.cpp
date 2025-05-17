@@ -4,7 +4,6 @@
 #include <QVBoxLayout>
 #include "../Controller/DaemonController.h"
 
-
 DaemonTab::DaemonTab(DaemonController* controller, QWidget* parent) : QWidget(parent), m_controller(controller) {
     m_statusLabel = new QLabel(this);
     m_startBtn = new QPushButton(tr("Start Daemon"), this);

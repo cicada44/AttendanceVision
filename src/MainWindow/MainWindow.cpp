@@ -9,12 +9,6 @@ MainWindow::MainWindow(QWidget* parent) : QWidget(parent) {
     cameraController = new CameraController(this);
     cameraController->setModel(cameraManager);
 
-    // Предзаполняем камеры из General.h
-    for (const auto& [url, name] : CameraRoomMap) {
-        cameraManager->addCamera(url, name);
-        cameraManager->openStream(url.toStdString());
-    }
-
     camerasTab = new CamerasTab(cameraController, this);
 
     daemonController = new DaemonController(this);

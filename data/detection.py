@@ -57,6 +57,7 @@ class CentroidTracker:
 
         return self.objects
 
+
 def main():
     video_path = 'lecture_recording.avi'
     cap = cv2.VideoCapture(video_path)
@@ -72,18 +73,20 @@ def main():
 
     tracker = CentroidTracker(max_disappeared=40, max_distance=75)
     entry_count, exit_count = 0, 0
-    cross_state = {}
+    cross_state = {}  # текущее «было/стало» для каждого ID
 
     ret, frame = cap.read()
     if not ret:
         print("❌ Empty video or cannot read first frame.")
         return
     H, W = frame.shape[:2]
-    line_y = H // 2  # counting line at center
+    line_y = H // 2           # основная линия
+    margin = 15               # гистерезис-полоса ±15 пикселей
 
     while ret:
         frame_draw = frame.copy()
-        rects, _ = hog.detectMultiScale(frame, winStride=(8,8), padding=(16,16), scale=1.05)
+        rects, _ = hog.detectMultiScale(frame, winStride=(8,8),
+                                        padding=(16,16), scale=1.05)
         centroids = []
         for (x, y, w, h) in rects:
             cx, cy = x + w//2, y + h//2
@@ -92,23 +95,34 @@ def main():
 
         objects = tracker.update(centroids)
 
-        for obj_id, centroid in objects.items():
-            cx, cy = centroid
-            prev = cross_state.get(obj_id)
-            curr = 'above' if cy < line_y else 'below'
-            if prev is not None:
+        for obj_id, (cx, cy) in objects.items():
+            prev = cross_state.get(obj_id)  # раньше было
+            # новое состояние с учётом нейтральной зоны
+            if cy < line_y - margin:
+                curr = 'above'
+            elif cy > line_y + margin:
+                curr = 'below'
+            else:
+                # пока в нейтральной зоне — не меняем состояние и не считаем
+                curr = prev
+
+            # если прошлое состояние известно и изменилось — фиксируем пересечение
+            if prev is not None and curr is not None and curr != prev:
                 if prev == 'above' and curr == 'below':
                     entry_count += 1
                 elif prev == 'below' and curr == 'above':
                     exit_count += 1
-            cross_state[obj_id] = curr
-            cv2.putText(frame_draw, f"ID{obj_id}", (cx-10, cy-10),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,0,0), 2)
 
+            # обновляем состояние (лишь когда можем)
+            if curr is not None:
+                cross_state[obj_id] = curr
+
+        # рисуем всё то же самое
         cv2.line(frame_draw, (0, line_y), (W, line_y), (0,0,255), 2)
+        # и два поля счётчика
         cv2.putText(frame_draw, f"Entries: {entry_count}", (10, 30),
                     cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,255), 2)
-        cv2.putText(frame_draw, f"Exits: {exit_count}", (10, 70),
+        cv2.putText(frame_draw, f"Exits:  {exit_count}", (10, 70),
                     cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,255), 2)
 
         cv2.imshow("Attendance Analysis", frame_draw)

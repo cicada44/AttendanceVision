@@ -9,7 +9,8 @@
                 "C:/msys64/mingw64/include/qt6/QtCore",
                 "C:/msys64/mingw64/include/qt6/QtGui",
                 "C:/msys64/mingw64/include/opencv4",
-                "C:/msys64/mingw64/include/qt6/QtSql"
+                "C:/msys64/mingw64/include/qt6/QtSql",
+                "C:/msys64/mingw64/include/qt6/QtNetwork"
             ],
             "defines": [
                 "_DEBUG",

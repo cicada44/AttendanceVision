@@ -66,21 +66,31 @@ void CamerasTab::refresh() {
 void CamerasTab::addNewCamera() {
     QDialog dialog(this);
     dialog.setWindowTitle("Добавить новую камеру");
-    dialog.setFixedSize(400, 250);
+    dialog.setFixedSize(400, 300);
 
     auto* layout = new QVBoxLayout(&dialog);
     auto* nameEdit = new QLineEdit();
     auto* urlEdit = new QLineEdit();
+    auto* ratioSpin = new QDoubleSpinBox();
+
     nameEdit->setPlaceholderText("Аудитория (например, 401)");
-    urlEdit->setPlaceholderText("URL (например, http://admin:password@192.168.1.100/video)");
+    urlEdit->setPlaceholderText("URL (например, rtsp://admin:pass@192.168.1.100/stream)");
+
+    ratioSpin->setRange(0.0, 1.0);
+    ratioSpin->setSingleStep(0.01);
+    ratioSpin->setDecimals(2);
+    ratioSpin->setValue(0.25);  // значение по умолчанию
 
     auto* nameLabel = new QLabel("Название аудитории:");
     auto* urlLabel = new QLabel("Ссылка на камеру:");
+    auto* ratioLabel = new QLabel("line_y_ratio (0.0–1.0):");
 
     layout->addWidget(nameLabel);
     layout->addWidget(nameEdit);
     layout->addWidget(urlLabel);
     layout->addWidget(urlEdit);
+    layout->addWidget(ratioLabel);
+    layout->addWidget(ratioSpin);
 
     auto* buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     layout->addWidget(buttonBox);
@@ -88,17 +98,20 @@ void CamerasTab::addNewCamera() {
     connect(buttonBox, &QDialogButtonBox::accepted, [&]() {
         QString url = urlEdit->text().trimmed();
         QString room = nameEdit->text().trimmed();
+        double ratio = ratioSpin->value();
+
         if (url.isEmpty() || room.isEmpty()) {
             QMessageBox::warning(this, "Ошибка", "Поля не должны быть пустыми");
             return;
         }
-        if (controller->addCamera(url, room)) {
+        if (controller->addCamera(url, room, ratio)) {
             dialog.accept();
             refresh();
         } else {
             QMessageBox::warning(this, "Ошибка", "Камера с таким URL уже существует или добавление не удалось.");
         }
     });
+
     connect(buttonBox, &QDialogButtonBox::rejected, [&]() { dialog.reject(); });
 
     dialog.exec();

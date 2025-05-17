@@ -14,10 +14,11 @@ public:
     CameraManager();
     ~CameraManager();
 
-    bool addCamera(const QString& url, const QString& room);
+    bool addCamera(const QString& url, const QString& room, double ratio);
     bool removeCamera(const QString& url);
 
     const std::unordered_set<std::string>& getCameraUrls() const;
+    double getLineYRatio(const QString& url) const;
 
     QMap<QString, QString> getCameras() const;
 

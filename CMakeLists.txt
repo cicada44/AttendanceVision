@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Qt6
-find_package(Qt6 REQUIRED COMPONENTS Widgets Sql)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Sql Network)
 # OpenCV
 find_package(OpenCV REQUIRED)
 
@@ -77,6 +77,7 @@ target_link_libraries(${PROJECT_NAME}
     PRIVATE
         Qt6::Widgets
         Qt6::Sql
+        Qt6::Network
         ${OpenCV_LIBS}
 )
 

@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
-    app.setStyle("Fusion");
+    // app.setStyle("Fusion");
 
     QFont f = app.font();
     f.setPointSize(16);

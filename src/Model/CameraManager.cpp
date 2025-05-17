@@ -13,15 +13,15 @@ CameraManager::~CameraManager() {
     }
 }
 
-bool CameraManager::addCamera(const QString& url, const QString& name) {
+bool CameraManager::addCamera(const QString& url, const QString& name, double lineYRatio) {
     QSqlQuery query;
-    query.prepare("INSERT INTO cameras (url, name) VALUES (:url, :name)");
+    query.prepare("INSERT INTO cameras (url, name, line_y_ratio) VALUES (:url, :name, :ratio)");
     query.bindValue(":url", url);
     query.bindValue(":name", name);
+    query.bindValue(":ratio", lineYRatio);
     if (!query.exec()) return false;
 
     cameraUrls.insert(url.toStdString());
-    CameraRoomMap[url] = name;
     return true;
 }
 
@@ -42,6 +42,14 @@ bool CameraManager::removeCamera(const QString& url) {
     }
 
     return true;
+}
+
+double CameraManager::getLineYRatio(const QString& url) const {
+    QSqlQuery query;
+    query.prepare("SELECT line_y_ratio FROM cameras WHERE url = :url");
+    query.bindValue(":url", url);
+    if (!query.exec() || !query.next()) return 0.25;
+    return query.value(0).toDouble();
 }
 
 QMap<QString, QString> CameraManager::getCameras() const {

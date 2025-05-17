@@ -14,7 +14,8 @@ cursor.execute('''
 CREATE TABLE cameras (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
-    url TEXT NOT NULL
+    url TEXT NOT NULL,
+    line_y_ratio REAL NOT NULL DEFAULT 0.25  -- Положение линии подсчёта по высоте кадра (0.0–1.0)
 )
 ''')
 

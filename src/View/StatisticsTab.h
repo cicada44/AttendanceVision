@@ -1,7 +1,11 @@
 #pragma once
 
-#include <QDateTime>
-#include <QtWidgets/QtWidgets>
+#include <QComboBox>
+#include <QDate>
+#include <QDateEdit>
+#include <QPushButton>
+#include <QTableWidget>
+#include <QWidget>
 
 #include "StatisticsController.h"
 
@@ -18,8 +22,8 @@ private:
     void loadData();
 
     StatisticsController* m_controller;
-    QDateTimeEdit* m_fromEdit;
-    QDateTimeEdit* m_toEdit;
+    QDateEdit* m_dateEdit;
+    QComboBox* m_pairNumber;
     QPushButton* m_refreshBtn;
     QTableWidget* m_entriesTable;
     QTableWidget* m_exitsTable;

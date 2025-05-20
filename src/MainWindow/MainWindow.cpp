@@ -1,8 +1,15 @@
 #include "MainWindow.h"
+#include <QDateTime>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QNetworkRequest>
+#include <QTimer>
 #include <QVBoxLayout>
-#include "General/General.h"
 
 #include "CustomWidgets/VTabWidget.h"
+#include "General/General.h"
 
 MainWindow::MainWindow(QWidget* parent) : QWidget(parent) {
     cameraManager = new CameraManager();
@@ -24,7 +31,67 @@ MainWindow::MainWindow(QWidget* parent) : QWidget(parent) {
     sideBar->addTab(daemonTab, "Daemon");
     sideBar->addTab(statisticsTab, tr("Statistics"));
 
-    auto layout = new QHBoxLayout(this);
-    layout->addWidget(sideBar);
-    setLayout(layout);
+    // Основной вертикальный layout
+    auto mainLayout = new QVBoxLayout(this);
+
+    // Центральное содержимое
+    auto centerLayout = new QHBoxLayout();
+    centerLayout->addWidget(sideBar);
+    mainLayout->addLayout(centerLayout);
+
+    // Статус-бар
+    timeLabel = new QLabel(this);
+    networkLabel = new QLabel(this);
+
+    auto statusLayout = new QHBoxLayout();
+    statusLayout->addWidget(networkLabel);
+    statusLayout->addStretch();
+    statusLayout->addWidget(timeLabel);
+
+    auto statusBar = new QWidget(this);
+    statusBar->setLayout(statusLayout);
+    statusBar->setFixedHeight(45);
+    statusBar->setStyleSheet("background: #ddd; padding: 2px; font-size: 12px;");
+
+    mainLayout->addWidget(statusBar);
+    setLayout(mainLayout);
+
+    // Таймер обновления времени
+    timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &MainWindow::updateTime);
+    timer->start(1000);
+
+    // Таймер проверки сети
+    networkManager = new QNetworkAccessManager(this);
+    QTimer* netTimer = new QTimer(this);
+    connect(netTimer, &QTimer::timeout, this, &MainWindow::checkNetworkStatus);
+    netTimer->start(10000);
+
+    updateTime();
+    checkNetworkStatus();
+}
+
+void MainWindow::updateTime() {
+    QString currentTime = QTime::currentTime().toString("hh:mm:ss");
+    timeLabel->setText("Time: " + currentTime);
+}
+
+void MainWindow::checkNetworkStatus() {
+    auto cameraUrls = cameraManager->getCameras();
+    if (cameraUrls.size() == 0) {
+        networkLabel->setText("Status: No cameras");
+        networkLabel->setStyleSheet("color: gray");
+        return;
+    }
+
+    auto url = *(cameraUrls.begin());
+    cv::VideoCapture* cap = cameraManager->getCapture(url.toStdString());
+
+    if (cap) {
+        networkLabel->setText("Status: Online");
+        networkLabel->setStyleSheet("color: green");
+    } else {
+        networkLabel->setText("Status: Offline");
+        networkLabel->setStyleSheet("color: red");
+    }
 }

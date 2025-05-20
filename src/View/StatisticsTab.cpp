@@ -1,36 +1,41 @@
 #include "StatisticsTab.h"
 #include "../Controller/StatisticsController.h"
 
-#include <QDateTimeEdit>
+#include <QComboBox>
+#include <QDateEdit>
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QLabel>
 #include <QMessageBox>
 #include <QPushButton>
+#include <QTabWidget>
 #include <QTableWidget>
 #include <QTableWidgetItem>
 #include <QVBoxLayout>
 
+
 StatisticsTab::StatisticsTab(StatisticsController* controller, QWidget* parent)
     : QWidget(parent), m_controller(controller) {
     setupUI();
-    // loadData();
 }
 
 void StatisticsTab::setupUI() {
     auto* mainLayout = new QVBoxLayout(this);
 
-    // --- Параметры периода ---
+    // --- Фильтры: дата и пара ---
     auto* controlsLayout = new QHBoxLayout;
-    controlsLayout->addWidget(new QLabel(tr("From:"), this));
-    m_fromEdit = new QDateTimeEdit(QDateTime::currentDateTime().addDays(-1), this);
-    m_fromEdit->setCalendarPopup(true);
-    controlsLayout->addWidget(m_fromEdit);
 
-    controlsLayout->addWidget(new QLabel(tr("To:"), this));
-    m_toEdit = new QDateTimeEdit(QDateTime::currentDateTime(), this);
-    m_toEdit->setCalendarPopup(true);
-    controlsLayout->addWidget(m_toEdit);
+    controlsLayout->addWidget(new QLabel(tr("Date:"), this));
+    m_dateEdit = new QDateEdit(QDate::currentDate(), this);
+    m_dateEdit->setCalendarPopup(true);
+    controlsLayout->addWidget(m_dateEdit);
+
+    controlsLayout->addWidget(new QLabel(tr("Pair #"), this));
+    m_pairNumber = new QComboBox(this);
+    for (int i = 1; i <= 6; ++i) {
+        m_pairNumber->addItem(QString::number(i));
+    }
+    controlsLayout->addWidget(m_pairNumber);
 
     m_refreshBtn = new QPushButton(tr("Refresh"), this);
     controlsLayout->addWidget(m_refreshBtn);
@@ -38,22 +43,20 @@ void StatisticsTab::setupUI() {
     mainLayout->addLayout(controlsLayout);
 
     // --- Таблицы для Entries / Exits ---
-    // Entries
     m_entriesTable = new QTableWidget(this);
     m_entriesTable->setColumnCount(2);
     m_entriesTable->setHorizontalHeaderLabels({tr("Timestamp"), tr("Count")});
     m_entriesTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    // Exits
     m_exitsTable = new QTableWidget(this);
     m_exitsTable->setColumnCount(2);
     m_exitsTable->setHorizontalHeaderLabels({tr("Timestamp"), tr("Count")});
     m_exitsTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    // Собираем в табах
     auto* tabs = new QTabWidget(this);
     tabs->addTab(m_entriesTable, tr("Entries"));
     tabs->addTab(m_exitsTable, tr("Exits"));
+
     mainLayout->addWidget(tabs);
 
     connect(m_refreshBtn, &QPushButton::clicked, this, &StatisticsTab::onRefreshClicked);
@@ -62,14 +65,13 @@ void StatisticsTab::setupUI() {
 void StatisticsTab::onRefreshClicked() { loadData(); }
 
 void StatisticsTab::loadData() {
-    const QDateTime from = m_fromEdit->dateTime();
-    const QDateTime to = m_toEdit->dateTime();
+    const QDate date = m_dateEdit->date();
+    const int pair = m_pairNumber->currentText().toInt();
 
-    // Получаем данные из контроллера
-    auto entries = m_controller->fetchEntries(from, to);
-    auto exits = m_controller->fetchExits(from, to);
+    auto entries = m_controller->fetchEntriesByPair(date, pair);
+    auto exits = m_controller->fetchExitsByPair(date, pair);
 
-    // Заполняем таблицу Entries
+    // Entries
     m_entriesTable->setRowCount(entries.size());
     for (int i = 0; i < entries.size(); ++i) {
         const auto& [ts, cnt] = entries.at(i);
@@ -77,7 +79,7 @@ void StatisticsTab::loadData() {
         m_entriesTable->setItem(i, 1, new QTableWidgetItem(QString::number(cnt)));
     }
 
-    // Заполняем таблицу Exits
+    // Exits
     m_exitsTable->setRowCount(exits.size());
     for (int i = 0; i < exits.size(); ++i) {
         const auto& [ts, cnt] = exits.at(i);

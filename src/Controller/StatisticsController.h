@@ -13,8 +13,8 @@ public:
     explicit StatisticsController(StatsRepository* repo, QObject* parent = nullptr);
 
     // вызывается из GUI
-    QVector<QPair<QDateTime, int>> fetchEntries(const QDateTime& from, const QDateTime& to);
-    QVector<QPair<QDateTime, int>> fetchExits(const QDateTime& from, const QDateTime& to);
+    QVector<QPair<QDateTime, int>> fetchEntriesByPair(const QDate& date, int pairNumber);
+    QVector<QPair<QDateTime, int>> fetchExitsByPair(const QDate& date, int pairNumber);
 
 private:
     StatsRepository* m_repo;

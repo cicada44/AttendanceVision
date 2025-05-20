@@ -411,10 +411,13 @@ AttendanceVision_autogen/timestamp: \
 	C:/msys64/mingw64/include/pthread_signal.h \
 	C:/msys64/mingw64/include/pthread_time.h \
 	C:/msys64/mingw64/include/pthread_unistd.h \
+	C:/msys64/mingw64/include/qt6/QtCore/QDate \
 	C:/msys64/mingw64/include/qt6/QtCore/QDateTime \
 	C:/msys64/mingw64/include/qt6/QtCore/QDeadlineTimer \
 	C:/msys64/mingw64/include/qt6/QtCore/QEvent \
+	C:/msys64/mingw64/include/qt6/QtCore/QFlags \
 	C:/msys64/mingw64/include/qt6/QtCore/QHash \
+	C:/msys64/mingw64/include/qt6/QtCore/QIODevice \
 	C:/msys64/mingw64/include/qt6/QtCore/QJsonArray \
 	C:/msys64/mingw64/include/qt6/QtCore/QJsonDocument \
 	C:/msys64/mingw64/include/qt6/QtCore/QJsonObject \
@@ -429,11 +432,13 @@ AttendanceVision_autogen/timestamp: \
 	C:/msys64/mingw64/include/qt6/QtCore/QProcess \
 	C:/msys64/mingw64/include/qt6/QtCore/QRect \
 	C:/msys64/mingw64/include/qt6/QtCore/QScopedPointer \
+	C:/msys64/mingw64/include/qt6/QtCore/QSharedDataPointer \
 	C:/msys64/mingw64/include/qt6/QtCore/QSize \
 	C:/msys64/mingw64/include/qt6/QtCore/QSizeF \
 	C:/msys64/mingw64/include/qt6/QtCore/QString \
 	C:/msys64/mingw64/include/qt6/QtCore/QStringList \
 	C:/msys64/mingw64/include/qt6/QtCore/QTimer \
+	C:/msys64/mingw64/include/qt6/QtCore/QUrl \
 	C:/msys64/mingw64/include/qt6/QtCore/QVariant \
 	C:/msys64/mingw64/include/qt6/QtCore/QVector \
 	C:/msys64/mingw64/include/qt6/QtCore/QtCore \
@@ -825,9 +830,23 @@ AttendanceVision_autogen/timestamp: \
 	C:/msys64/mingw64/include/qt6/QtGui/qwindowdefs.h \
 	C:/msys64/mingw64/include/qt6/QtGui/qwindowdefs_win.h \
 	C:/msys64/mingw64/include/qt6/QtGui/qwindowsmimeconverter.h \
+	C:/msys64/mingw64/include/qt6/QtNetwork/QNetworkAccessManager \
+	C:/msys64/mingw64/include/qt6/QtNetwork/QNetworkReply \
+	C:/msys64/mingw64/include/qt6/QtNetwork/QNetworkRequest \
+	C:/msys64/mingw64/include/qt6/QtNetwork/QSslConfiguration \
+	C:/msys64/mingw64/include/qt6/QtNetwork/QSslPreSharedKeyAuthenticator \
 	C:/msys64/mingw64/include/qt6/QtNetwork/QTcpSocket \
 	C:/msys64/mingw64/include/qt6/QtNetwork/qabstractsocket.h \
 	C:/msys64/mingw64/include/qt6/QtNetwork/qhostaddress.h \
+	C:/msys64/mingw64/include/qt6/QtNetwork/qnetworkaccessmanager.h \
+	C:/msys64/mingw64/include/qt6/QtNetwork/qnetworkreply.h \
+	C:/msys64/mingw64/include/qt6/QtNetwork/qnetworkrequest.h \
+	C:/msys64/mingw64/include/qt6/QtNetwork/qssl.h \
+	C:/msys64/mingw64/include/qt6/QtNetwork/qsslcertificate.h \
+	C:/msys64/mingw64/include/qt6/QtNetwork/qsslconfiguration.h \
+	C:/msys64/mingw64/include/qt6/QtNetwork/qsslerror.h \
+	C:/msys64/mingw64/include/qt6/QtNetwork/qsslpresharedkeyauthenticator.h \
+	C:/msys64/mingw64/include/qt6/QtNetwork/qsslsocket.h \
 	C:/msys64/mingw64/include/qt6/QtNetwork/qtcpsocket.h \
 	C:/msys64/mingw64/include/qt6/QtNetwork/qtnetwork-config.h \
 	C:/msys64/mingw64/include/qt6/QtNetwork/qtnetworkexports.h \
@@ -838,11 +857,16 @@ AttendanceVision_autogen/timestamp: \
 	C:/msys64/mingw64/include/qt6/QtSql/qtsql-config.h \
 	C:/msys64/mingw64/include/qt6/QtSql/qtsqlexports.h \
 	C:/msys64/mingw64/include/qt6/QtSql/qtsqlglobal.h \
+	C:/msys64/mingw64/include/qt6/QtWidgets/QComboBox \
 	C:/msys64/mingw64/include/qt6/QtWidgets/QCommonStyle \
+	C:/msys64/mingw64/include/qt6/QtWidgets/QDateEdit \
 	C:/msys64/mingw64/include/qt6/QtWidgets/QDialog \
 	C:/msys64/mingw64/include/qt6/QtWidgets/QLabel \
 	C:/msys64/mingw64/include/qt6/QtWidgets/QLayout \
+	C:/msys64/mingw64/include/qt6/QtWidgets/QPushButton \
 	C:/msys64/mingw64/include/qt6/QtWidgets/QScrollerProperties \
+	C:/msys64/mingw64/include/qt6/QtWidgets/QStatusBar \
+	C:/msys64/mingw64/include/qt6/QtWidgets/QTableWidget \
 	C:/msys64/mingw64/include/qt6/QtWidgets/QWidget \
 	C:/msys64/mingw64/include/qt6/QtWidgets/QtWidgets \
 	C:/msys64/mingw64/include/qt6/QtWidgets/QtWidgetsDepends \

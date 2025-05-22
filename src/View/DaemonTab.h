@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include <QtWidgets/QtWidgets>
 
 class QPushButton;
 class QLabel;
@@ -16,6 +16,7 @@ private:
     QPushButton* m_startBtn;
     QPushButton* m_stopBtn;
     QLabel* m_statusLabel;
+    QCheckBox* m_visualModeCheckbox;
 
 private slots:
     void onStartClicked();

@@ -77,21 +77,19 @@ void MainWindow::updateTime() {
 }
 
 void MainWindow::checkNetworkStatus() {
-    auto cameraUrls = cameraManager->getCameras();
-    if (cameraUrls.size() == 0) {
-        networkLabel->setText("Status: No cameras");
-        networkLabel->setStyleSheet("color: gray");
-        return;
-    }
+    QNetworkAccessManager* networkManager = new QNetworkAccessManager(this);
+    QNetworkRequest request(QUrl("https://zm.csc.sibsutis.ru/"));
 
-    auto url = *(cameraUrls.begin());
-    cv::VideoCapture* cap = cameraManager->getCapture(url.toStdString());
+    QNetworkReply* reply = networkManager->get(request);
 
-    if (cap) {
-        networkLabel->setText("Status: Online");
-        networkLabel->setStyleSheet("color: green");
-    } else {
-        networkLabel->setText("Status: Offline");
-        networkLabel->setStyleSheet("color: red");
-    }
+    connect(reply, &QNetworkReply::finished, this, [reply, this]() {
+        if (reply->bytesAvailable() > 0 || reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).isValid()) {
+            networkLabel->setText("Status: Online");
+            networkLabel->setStyleSheet("color: green");
+        } else {
+            networkLabel->setText("Status: Offline");
+            networkLabel->setStyleSheet("color: red");
+        }
+        reply->deleteLater();
+    });
 }

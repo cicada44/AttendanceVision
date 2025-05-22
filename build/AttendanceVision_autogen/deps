@@ -429,7 +429,6 @@ AttendanceVision_autogen/timestamp: \
 	C:/msys64/mingw64/include/qt6/QtCore/QObject \
 	C:/msys64/mingw64/include/qt6/QtCore/QPair \
 	C:/msys64/mingw64/include/qt6/QtCore/QPointF \
-	C:/msys64/mingw64/include/qt6/QtCore/QProcess \
 	C:/msys64/mingw64/include/qt6/QtCore/QRect \
 	C:/msys64/mingw64/include/qt6/QtCore/QScopedPointer \
 	C:/msys64/mingw64/include/qt6/QtCore/QSharedDataPointer \

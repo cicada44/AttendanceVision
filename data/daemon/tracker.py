@@ -32,16 +32,14 @@ class CentroidTracker:
         else:
             object_ids = list(self.objects.keys())
             object_centroids = list(self.objects.values())
-
             D = np.linalg.norm(
-                np.array(object_centroids)[:, np.newaxis] - np.array(input_centroids), axis=2
+                np.array(object_centroids)[:, np.newaxis] - np.array(input_centroids),
+                axis=2
             )
 
             rows = D.min(axis=1).argsort()
             cols = D.argmin(axis=1)[rows]
-
-            used_rows = set()
-            used_cols = set()
+            used_rows, used_cols = set(), set()
 
             for row, col in zip(rows, cols):
                 if row in used_rows or col in used_cols or D[row, col] > self.max_distance:

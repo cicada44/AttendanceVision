@@ -16,6 +16,8 @@ public:
     QVector<QPair<QDateTime, int>> fetchEntriesByPair(const QDate& date, int pairNumber);
     QVector<QPair<QDateTime, int>> fetchExitsByPair(const QDate& date, int pairNumber);
 
+    QVector<QPair<QString, QVector<int>>> fetchEntrySummaryByDate(const QDate& date);
+
 private:
     StatsRepository* m_repo;
 };

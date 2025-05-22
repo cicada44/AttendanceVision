@@ -8,9 +8,11 @@ DaemonTab::DaemonTab(DaemonController* controller, QWidget* parent) : QWidget(pa
     m_statusLabel = new QLabel(this);
     m_startBtn = new QPushButton(tr("Start Daemon"), this);
     m_stopBtn = new QPushButton(tr("Stop Daemon"), this);
+    m_visualModeCheckbox = new QCheckBox(tr("Visual mode"), this);
 
     auto* vlay = new QVBoxLayout(this);
     vlay->addWidget(m_statusLabel);
+    vlay->addWidget(m_visualModeCheckbox);
     vlay->addWidget(m_startBtn);
     vlay->addWidget(m_stopBtn);
     vlay->addStretch();
@@ -24,7 +26,10 @@ DaemonTab::DaemonTab(DaemonController* controller, QWidget* parent) : QWidget(pa
     updateStatus();
 }
 
-void DaemonTab::onStartClicked() { m_controller->startDaemon(); }
+void DaemonTab::onStartClicked() {
+    bool visual = m_visualModeCheckbox->isChecked();
+    m_controller->startDaemon(visual);
+}
 
 void DaemonTab::onStopClicked() { m_controller->stopDaemon(); }
 
